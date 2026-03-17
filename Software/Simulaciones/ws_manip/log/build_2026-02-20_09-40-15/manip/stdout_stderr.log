@@ -1,0 +1,22 @@
+-- Install configuration: ""
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/launch
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/launch/display.launch.py
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/urdf
+-- Installing: /home/arlo/ws_manip/install/manip/share/manip/urdf/model.urdf
+-- Installing: /home/arlo/ws_manip/install/manip/share/manip/urdf/modelold.urdf
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/config
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/package_run_dependencies/manip
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/parent_prefix_path/manip
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/ament_prefix_path.sh
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/path.sh
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/path.dsv
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.bash
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.sh
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.zsh
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.dsv
+-- Installing: /home/arlo/ws_manip/install/manip/share/manip/package.dsv
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/packages/manip
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/cmake/manipConfig.cmake
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/cmake/manipConfig-version.cmake
+-- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/package.xml

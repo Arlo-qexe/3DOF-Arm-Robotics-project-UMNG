@@ -1,0 +1,26 @@
+[0.027s] Invoking command in '/home/arlo/ws_manip/build/manip': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/arlo/ws_manip/build/manip -- -j16 -l16
+[0.339s] Invoked command in '/home/arlo/ws_manip/build/manip' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/arlo/ws_manip/build/manip -- -j16 -l16
+[0.358s] Invoking command in '/home/arlo/ws_manip/build/manip': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/arlo/ws_manip/build/manip
+[0.372s] -- Install configuration: ""
+[0.372s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/launch
+[0.372s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/launch/display.launch.py
+[0.372s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/urdf
+[0.373s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/urdf/model.urdf
+[0.373s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/urdf/modelold.urdf
+[0.373s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/config
+[0.373s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/package_run_dependencies/manip
+[0.373s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/parent_prefix_path/manip
+[0.373s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/ament_prefix_path.sh
+[0.373s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/ament_prefix_path.dsv
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/path.sh
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/environment/path.dsv
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.bash
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.sh
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.zsh
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/local_setup.dsv
+[0.374s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/package.dsv
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/packages/manip
+[0.374s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/cmake/manipConfig.cmake
+[0.375s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/cmake/manipConfig-version.cmake
+[0.375s] -- Up-to-date: /home/arlo/ws_manip/install/manip/share/manip/package.xml
+[0.377s] Invoked command in '/home/arlo/ws_manip/build/manip' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/arlo/ws_manip/build/manip

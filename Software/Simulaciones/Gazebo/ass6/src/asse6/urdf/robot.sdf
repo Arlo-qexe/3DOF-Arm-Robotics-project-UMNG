@@ -1,0 +1,199 @@
+<sdf version="1.11">
+  <model name="Ensamblajefullv6">
+    <link name="base_link">
+      <inertial>
+        <pose>0.012565 -0.015002 1.115 0 0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>0.0072269999999999999</ixx>
+          <ixy>-9.6647000000000007e-18</ixy>
+          <ixz>-0.00067265000000000001</ixz>
+          <iyy>0.011719</iyy>
+          <iyz>-4.1082999999999999e-18</iyz>
+          <izz>0.014099</izz>
+        </inertia>
+      </inertial>
+      <collision name="base_link_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="R1" type="revolute">
+      <pose relative_to="base_link">-0.054121264029942703 -1.14500000000001 -0.015001895546712499 1.5707963267948728 -1.5637747285941148 2.3717509513980287e-14</pose>
+      <parent>base_link</parent>
+      <child>BaseR</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="BaseR">
+      <pose relative_to="R1">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0078866000000000006 0.0026077000000000001 0.026509999999999999 0 0 0</pose>
+        <mass>0.25</mass>
+        <inertia>
+          <ixx>0.0011673</ixx>
+          <ixy>-1.5260999999999998e-05</ixy>
+          <ixz>-0.00011283</ixz>
+          <iyy>0.0012562999999999999</iyy>
+          <iyz>-2.4090000000000001e-05</iyz>
+          <izz>0.0019548</izz>
+        </inertia>
+      </inertial>
+      <collision name="BaseR_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/BaseR.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="BaseR_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/BaseR.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="R2" type="revolute">
+      <pose relative_to="BaseR">0.040000000000000299 0 0.064999999999998795 -0.47016205498972702 0 1.5707963267949001</pose>
+      <parent>BaseR</parent>
+      <child>Arm1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Arm1">
+      <pose relative_to="R2">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.020414000000000002 -6.1851000000000001e-05 0.082682000000000005 0 0 0</pose>
+        <mass>0.14999999999999999</mass>
+        <inertia>
+          <ixx>0.0010516</ixx>
+          <ixy>1.5848e-07</ixy>
+          <ixz>-1.1229e-05</ixz>
+          <iyy>0.00096051999999999997</iyy>
+          <iyz>1.6129000000000001e-07</iyz>
+          <izz>0.00013862</izz>
+        </inertia>
+      </inertial>
+      <collision name="Arm1_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/Arm1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="Arm1_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/Arm1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="R3" type="revolute">
+      <pose relative_to="Arm1">0 0 0.17999999999999999 -1.5708 -1.0832000000000002 -1.5708</pose>
+      <parent>Arm1</parent>
+      <child>Arm2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="Arm2">
+      <pose relative_to="R3">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>2.4366999999999999e-06 0.052614000000000001 0.021520000000000001 0 0 0</pose>
+        <mass>0.10000000000000001</mass>
+        <inertia>
+          <ixx>0.00091558999999999998</ixx>
+          <ixy>-1.7395000000000001e-08</ixy>
+          <ixz>4.0709000000000001e-09</ixz>
+          <iyy>0.00015629000000000001</iyy>
+          <iyz>-4.3557000000000003e-05</iyz>
+          <izz>0.00095733000000000005</izz>
+        </inertia>
+      </inertial>
+      <collision name="Arm2_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/Arm2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="Arm2_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse6/meshes/visual/Arm2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990199983 1 1 1</diffuse>
+          <ambient>0.990199983 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

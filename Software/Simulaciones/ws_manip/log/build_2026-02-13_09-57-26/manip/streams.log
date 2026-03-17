@@ -1,0 +1,24 @@
+[0.014s] Invoking command in '/home/arlo/ws_manip/build/manip': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/arlo/ws_manip/build/manip -- -j16 -l16
+[0.050s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.372s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.501s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.501s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.502s] -- Added test 'lint_cmake' to check CMake code style
+[0.502s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.504s] -- Added test 'xmllint' to check XML markup files
+[0.506s] -- Configuring done (0.5s)
+[0.511s] -- Generating done (0.0s)
+[0.514s] -- Build files have been written to: /home/arlo/ws_manip/build/manip
+[0.553s] Invoked command in '/home/arlo/ws_manip/build/manip' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/arlo/ws_manip/build/manip -- -j16 -l16
+[0.569s] Invoking command in '/home/arlo/ws_manip/build/manip': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/arlo/ws_manip/build/manip
+[0.580s] -- Install configuration: ""
+[0.580s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/launch
+[0.581s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/launch/display.launch.py
+[0.581s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/urdf
+[0.581s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/urdf/model.urdf
+[0.581s] [31mCMake Error at cmake_install.cmake:46 (file):
+[0.581s]   file INSTALL cannot find "/home/arlo/ws_manip/src/manip/config": No such
+[0.581s]   file or directory.
+[0.581s] 
+[0.581s] [0m
+[0.583s] Invoked command in '/home/arlo/ws_manip/build/manip' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/arlo/ws_manip/build/manip

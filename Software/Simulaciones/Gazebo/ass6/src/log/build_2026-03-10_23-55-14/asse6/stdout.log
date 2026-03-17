@@ -1,0 +1,14 @@
+running develop
+running egg_info
+writing asse6.egg-info/PKG-INFO
+writing dependency_links to asse6.egg-info/dependency_links.txt
+writing requirements to asse6.egg-info/requires.txt
+writing top-level names to asse6.egg-info/top_level.txt
+reading manifest file 'asse6.egg-info/SOURCES.txt'
+writing manifest file 'asse6.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages/asse6.egg-link (link to .)
+
+Installed /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6
+running symlink_data
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/config/controllers.yaml -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/config/

@@ -1,0 +1,8 @@
+source;share/manip/hook/cmake_prefix_path.ps1
+source;share/manip/hook/cmake_prefix_path.dsv
+source;share/manip/hook/cmake_prefix_path.sh
+source;share/manip/local_setup.bash
+source;share/manip/local_setup.dsv
+source;share/manip/local_setup.ps1
+source;share/manip/local_setup.sh
+source;share/manip/local_setup.zsh

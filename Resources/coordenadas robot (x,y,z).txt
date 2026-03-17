@@ -1,0 +1,6 @@
+coordenadas robot (x,y,z):
+
+- centro (0,0,20cm)
+- pinpon origen (18cm 25cm 20cm)
+- Origen/reposo (0cm -10cm 24cm)
+- pinpon dejar (-19cm 0cm 22cm)

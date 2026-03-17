@@ -1,0 +1,43 @@
+[1.742s] Invoking command in '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/build --no-deps symlink_data
+[1.998s] running develop
+[2.163s] running egg_info
+[2.163s] creating asse6.egg-info
+[2.178s] writing asse6.egg-info/PKG-INFO
+[2.178s] writing dependency_links to asse6.egg-info/dependency_links.txt
+[2.179s] writing requirements to asse6.egg-info/requires.txt
+[2.179s] writing top-level names to asse6.egg-info/top_level.txt
+[2.179s] writing manifest file 'asse6.egg-info/SOURCES.txt'
+[2.212s] reading manifest file 'asse6.egg-info/SOURCES.txt'
+[2.213s] writing manifest file 'asse6.egg-info/SOURCES.txt'
+[2.230s] running build_ext
+[2.231s] Creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages/asse6.egg-link (link to .)
+[2.232s] 
+[2.232s] Installed /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6
+[2.232s] running symlink_data
+[2.232s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index
+[2.232s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index
+[2.232s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index/packages
+[2.232s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/resource/asse6 -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index/packages
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/package.xml -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/launch/gz_simulator_launch.py -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/launch/launch.py -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6
+[2.233s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/urdf/robot.sdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf/
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/urdf/Ensamblajefullv6.urdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf/
+[2.233s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/world
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/world/depot.sdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/world/
+[2.233s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/rviz
+[2.233s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes
+[2.233s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/BaseR.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+[2.233s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/Arm1.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+[2.234s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/base_link.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+[2.234s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/Arm2.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+[2.234s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual
+[2.234s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/BaseR.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+[2.234s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/Arm1.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+[2.234s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/base_link.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+[2.234s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/Arm2.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+[2.234s] creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/config
+[2.234s] symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/config/gz_bridge.yaml -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/config/
+[2.269s] Invoked command in '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/build --no-deps symlink_data

@@ -1,0 +1,42 @@
+[0.014s] Invoking command in '/home/arlo/ws_manip/build/manip': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/arlo/ws_manip/src/manip -DCMAKE_INSTALL_PREFIX=/home/arlo/ws_manip/install/manip
+[0.700s] -- The C compiler identification is GNU 13.3.0
+[1.241s] -- The CXX compiler identification is GNU 13.3.0
+[1.283s] -- Detecting C compiler ABI info
+[1.462s] -- Detecting C compiler ABI info - done
+[1.476s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.478s] -- Detecting C compile features
+[1.479s] -- Detecting C compile features - done
+[1.496s] -- Detecting CXX compiler ABI info
+[1.677s] -- Detecting CXX compiler ABI info - done
+[1.693s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.693s] -- Detecting CXX compile features
+[1.694s] -- Detecting CXX compile features - done
+[1.707s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.932s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.135s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.303s] -- Added test 'lint_cmake' to check CMake code style
+[2.306s] -- Added test 'xmllint' to check XML markup files
+[2.309s] -- Configuring done (2.3s)
+[2.314s] -- Generating done (0.0s)
+[2.316s] -- Build files have been written to: /home/arlo/ws_manip/build/manip
+[2.323s] Invoked command in '/home/arlo/ws_manip/build/manip' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/arlo/ws_manip/src/manip -DCMAKE_INSTALL_PREFIX=/home/arlo/ws_manip/install/manip
+[2.325s] Invoking command in '/home/arlo/ws_manip/build/manip': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/arlo/ws_manip/build/manip -- -j16 -l16
+[2.391s] Invoked command in '/home/arlo/ws_manip/build/manip' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/arlo/ws_manip/build/manip -- -j16 -l16
+[2.407s] Invoking command in '/home/arlo/ws_manip/build/manip': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/arlo/ws_manip/build/manip
+[2.418s] -- Install configuration: ""
+[2.418s] -- Installing: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/package_run_dependencies/manip
+[2.419s] -- Installing: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/parent_prefix_path/manip
+[2.419s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/environment/ament_prefix_path.sh
+[2.419s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/environment/ament_prefix_path.dsv
+[2.419s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/environment/path.sh
+[2.420s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/environment/path.dsv
+[2.420s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/local_setup.bash
+[2.420s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/local_setup.sh
+[2.420s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/local_setup.zsh
+[2.420s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/local_setup.dsv
+[2.421s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/package.dsv
+[2.421s] -- Installing: /home/arlo/ws_manip/install/manip/share/ament_index/resource_index/packages/manip
+[2.421s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/cmake/manipConfig.cmake
+[2.421s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/cmake/manipConfig-version.cmake
+[2.422s] -- Installing: /home/arlo/ws_manip/install/manip/share/manip/package.xml
+[2.424s] Invoked command in '/home/arlo/ws_manip/build/manip' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/arlo/ws_manip/build/manip

@@ -1,0 +1,27 @@
+[0.015s] Invoking command in '/home/arlo/ws_manip/build/manipulador': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/arlo/ws_manip/src/manip -DCMAKE_INSTALL_PREFIX=/home/arlo/ws_manip/install/manipulador
+[0.099s] -- The C compiler identification is GNU 13.3.0
+[0.187s] -- The CXX compiler identification is GNU 13.3.0
+[0.215s] -- Detecting C compiler ABI info
+[0.352s] -- Detecting C compiler ABI info - done
+[0.367s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.368s] -- Detecting C compile features
+[0.368s] -- Detecting C compile features - done
+[0.384s] -- Detecting CXX compiler ABI info
+[0.535s] -- Detecting CXX compiler ABI info - done
+[0.548s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.549s] -- Detecting CXX compile features
+[0.549s] -- Detecting CXX compile features - done
+[0.553s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.766s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.915s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.034s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:53 (message):
+[1.034s]   ament_package_xml() package name 'manipulador' in '/package.xml' does not
+[1.034s]   match current PROJECT_NAME 'manip'.  You must call project() with the same
+[1.034s]   package name before.
+[1.035s] Call Stack (most recent call first):
+[1.035s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)
+[1.035s]   CMakeLists.txt:28 (ament_lint_auto_find_test_dependencies)
+[1.035s] 
+[1.035s] [0m
+[1.035s] -- Configuring incomplete, errors occurred!
+[1.043s] Invoked command in '/home/arlo/ws_manip/build/manipulador' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/arlo/ws_manip/src/manip -DCMAKE_INSTALL_PREFIX=/home/arlo/ws_manip/install/manipulador

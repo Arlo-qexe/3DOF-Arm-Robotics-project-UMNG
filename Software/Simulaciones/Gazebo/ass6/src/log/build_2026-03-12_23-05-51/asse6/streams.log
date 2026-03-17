@@ -1,0 +1,15 @@
+[1.814s] Invoking command in '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/build --no-deps symlink_data
+[2.068s] running develop
+[2.236s] running egg_info
+[2.251s] writing asse6.egg-info/PKG-INFO
+[2.251s] writing dependency_links to asse6.egg-info/dependency_links.txt
+[2.254s] writing requirements to asse6.egg-info/requires.txt
+[2.255s] writing top-level names to asse6.egg-info/top_level.txt
+[2.292s] reading manifest file 'asse6.egg-info/SOURCES.txt'
+[2.293s] writing manifest file 'asse6.egg-info/SOURCES.txt'
+[2.310s] running build_ext
+[2.313s] Creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages/asse6.egg-link (link to .)
+[2.314s] 
+[2.314s] Installed /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6
+[2.314s] running symlink_data
+[2.351s] Invoked command in '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/build --no-deps symlink_data

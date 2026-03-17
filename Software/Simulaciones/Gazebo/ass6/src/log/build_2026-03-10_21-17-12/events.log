@@ -1,0 +1,70 @@
+[0.000000] (-) TimerEvent: {}
+[0.000415] (asse6) JobQueued: {'identifier': 'asse6', 'dependencies': OrderedDict()}
+[0.000438] (asse6) JobStarted: {'identifier': 'asse6'}
+[0.099691] (-) TimerEvent: {}
+[0.200095] (-) TimerEvent: {}
+[0.300460] (-) TimerEvent: {}
+[0.400670] (-) TimerEvent: {}
+[0.500892] (-) TimerEvent: {}
+[0.601111] (-) TimerEvent: {}
+[0.701299] (-) TimerEvent: {}
+[0.801494] (-) TimerEvent: {}
+[0.901705] (-) TimerEvent: {}
+[1.001934] (-) TimerEvent: {}
+[1.102157] (-) TimerEvent: {}
+[1.202377] (-) TimerEvent: {}
+[1.302583] (-) TimerEvent: {}
+[1.402808] (-) TimerEvent: {}
+[1.503024] (-) TimerEvent: {}
+[1.603272] (-) TimerEvent: {}
+[1.703495] (-) TimerEvent: {}
+[1.742073] (asse6) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/build', '--no-deps', 'symlink_data'], 'cwd': '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'arlo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/arlo', 'OLDPWD': '/home/arlo/Ros_projects/Ros2/ass6/src/asse6', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '4396', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'arlo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'arlo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/Arlo-IdeaPad-Gaming-3-15ARH7:@/tmp/.ICE-unix/4353,unix/Arlo-IdeaPad-Gaming-3-15ARH7:/tmp/.ICE-unix/4353', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0052b66a_9bb3_42df_9c99_e1eb5b910a78', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.160', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[1.803586] (-) TimerEvent: {}
+[1.903829] (-) TimerEvent: {}
+[1.998712] (asse6) StdoutLine: {'line': b'running develop\n'}
+[2.003914] (-) TimerEvent: {}
+[2.104152] (-) TimerEvent: {}
+[2.163080] (asse6) StdoutLine: {'line': b'running egg_info\n'}
+[2.163275] (asse6) StdoutLine: {'line': b'creating asse6.egg-info\n'}
+[2.178616] (asse6) StdoutLine: {'line': b'writing asse6.egg-info/PKG-INFO\n'}
+[2.178795] (asse6) StdoutLine: {'line': b'writing dependency_links to asse6.egg-info/dependency_links.txt\n'}
+[2.178919] (asse6) StdoutLine: {'line': b'writing requirements to asse6.egg-info/requires.txt\n'}
+[2.179025] (asse6) StdoutLine: {'line': b'writing top-level names to asse6.egg-info/top_level.txt\n'}
+[2.179108] (asse6) StdoutLine: {'line': b"writing manifest file 'asse6.egg-info/SOURCES.txt'\n"}
+[2.204247] (-) TimerEvent: {}
+[2.212337] (asse6) StdoutLine: {'line': b"reading manifest file 'asse6.egg-info/SOURCES.txt'\n"}
+[2.212909] (asse6) StdoutLine: {'line': b"writing manifest file 'asse6.egg-info/SOURCES.txt'\n"}
+[2.229887] (asse6) StdoutLine: {'line': b'running build_ext\n'}
+[2.231622] (asse6) StdoutLine: {'line': b'Creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages/asse6.egg-link (link to .)\n'}
+[2.232271] (asse6) StdoutLine: {'line': b'\n'}
+[2.232437] (asse6) StdoutLine: {'line': b'Installed /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6\n'}
+[2.232519] (asse6) StdoutLine: {'line': b'running symlink_data\n'}
+[2.232592] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index\n'}
+[2.232705] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index\n'}
+[2.232789] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index/packages\n'}
+[2.232872] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/resource/asse6 -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index/packages\n'}
+[2.232966] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/package.xml -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6\n'}
+[2.233040] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/launch/gz_simulator_launch.py -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6\n'}
+[2.233166] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/launch/launch.py -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6\n'}
+[2.233252] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf\n'}
+[2.233345] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/urdf/robot.sdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf/\n'}
+[2.233426] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/urdf/Ensamblajefullv6.urdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf/\n'}
+[2.233519] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/world\n'}
+[2.233617] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/world/depot.sdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/world/\n'}
+[2.233711] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/rviz\n'}
+[2.233763] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes\n'}
+[2.233808] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision\n'}
+[2.233856] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/BaseR.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/\n'}
+[2.233904] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/Arm1.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/\n'}
+[2.233949] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/base_link.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/\n'}
+[2.233996] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/Arm2.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/\n'}
+[2.234063] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual\n'}
+[2.234156] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/BaseR.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/\n'}
+[2.234256] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/Arm1.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/\n'}
+[2.234330] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/base_link.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/\n'}
+[2.234397] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/Arm2.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/\n'}
+[2.234460] (asse6) StdoutLine: {'line': b'creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/config\n'}
+[2.234521] (asse6) StdoutLine: {'line': b'symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/config/gz_bridge.yaml -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/config/\n'}
+[2.269268] (asse6) CommandEnded: {'returncode': 0}
+[2.290630] (asse6) JobEnded: {'identifier': 'asse6', 'rc': 0}
+[2.291135] (-) EventReactorShutdown: {}

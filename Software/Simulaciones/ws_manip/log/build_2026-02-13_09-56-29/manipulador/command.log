@@ -1,0 +1,2 @@
+Invoking command in '/home/arlo/ws_manip/build/manipulador': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/arlo/ws_manip/src/manip -DCMAKE_INSTALL_PREFIX=/home/arlo/ws_manip/install/manipulador
+Invoked command in '/home/arlo/ws_manip/build/manipulador' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/arlo/ws_manip/src/manip -DCMAKE_INSTALL_PREFIX=/home/arlo/ws_manip/install/manipulador

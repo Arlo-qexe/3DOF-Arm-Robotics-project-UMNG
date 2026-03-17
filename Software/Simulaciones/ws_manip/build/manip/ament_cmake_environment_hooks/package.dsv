@@ -1,0 +1,4 @@
+source;share/manip/local_setup.bash
+source;share/manip/local_setup.dsv
+source;share/manip/local_setup.sh
+source;share/manip/local_setup.zsh

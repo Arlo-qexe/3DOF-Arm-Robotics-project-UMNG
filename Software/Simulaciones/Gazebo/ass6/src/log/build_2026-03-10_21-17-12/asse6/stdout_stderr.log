@@ -1,0 +1,41 @@
+running develop
+running egg_info
+creating asse6.egg-info
+writing asse6.egg-info/PKG-INFO
+writing dependency_links to asse6.egg-info/dependency_links.txt
+writing requirements to asse6.egg-info/requires.txt
+writing top-level names to asse6.egg-info/top_level.txt
+writing manifest file 'asse6.egg-info/SOURCES.txt'
+reading manifest file 'asse6.egg-info/SOURCES.txt'
+writing manifest file 'asse6.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/lib/python3.12/site-packages/asse6.egg-link (link to .)
+
+Installed /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6
+running symlink_data
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index/packages
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/resource/asse6 -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/ament_index/resource_index/packages
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/package.xml -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/launch/gz_simulator_launch.py -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/launch/launch.py -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/urdf/robot.sdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf/
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/urdf/Ensamblajefullv6.urdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/urdf/
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/world
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/world/depot.sdf -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/world/
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/rviz
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/BaseR.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/Arm1.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/base_link.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/collision/Arm2.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/collision/
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/BaseR.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/Arm1.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/base_link.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/meshes/visual/Arm2.STL -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/meshes/visual/
+creating /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/config
+symbolically linking /home/arlo/Ros_projects/Ros2/ass6/src/build/asse6/config/gz_bridge.yaml -> /home/arlo/Ros_projects/Ros2/ass6/src/install/asse6/share/asse6/config/
