@@ -43,6 +43,15 @@ El modelo permite calcular:
 
 ![Simulacion Gazebo en conexión con interfaz propia en python](Software/Simulaciones/Simulacion%20ass6%20con%20interfaz%20python.png)
 
+Conexión de interfaz con el control de posicion de motores
+- Conexión Serial con ESP32
+- Comparación de posicion estimada y actual
+- Visualizacion de pose
+- Cinematica inversa y directa
+- Movimiento independiente de 3 Motores
+
+![Interfaz conexión con motres](Resources/Interfaz2.png)
+
 # 👩‍💻 Autores
 
 Proyecto desarrollado por:
