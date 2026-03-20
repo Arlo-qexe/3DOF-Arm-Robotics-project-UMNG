@@ -34,10 +34,14 @@ El sistema está compuesto por un brazo robótico de 3 grados de libertad:
 - Articulación 3: Movimiento del segundo eslabón
 - Efector final: Posicionamiento en el plano
 
+![Ensamblaje en SolidWorks](Resources/Ensamblaje%201.png)
+
 El modelo permite calcular:
 - Cinemática directa
 - Cinemática inversa
 - Posición del efector final
+
+![Simulacion Gazebo en conexión con interfaz propia en python](Software/Simulaciones/Simulacion%20ass6%20con%20interfaz%20python.png)
 
 # 👩‍💻 Autores
 
