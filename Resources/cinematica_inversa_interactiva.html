@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cinemática Inversa — Robot 3DOF</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg:       #0d0d14;
+    --surface:  #13131f;
+    --card:     #1a1a2e;
+    --border:   #2a2a45;
+    --accent1:  #89b4fa;
+    --accent2:  #a6e3a1;
+    --accent3:  #f9e2af;
+    --accent4:  #f38ba8;
+    --accent5:  #cba6f7;
+    --text:     #cdd6f4;
+    --muted:    #6c7086;
+    --eq-bg:    #0f0f1a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(137,180,250,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(137,180,250,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── HEADER ── */
+  header { text-align: center; margin-bottom: 48px; }
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent1);
+    background: rgba(137,180,250,0.1);
+    border: 1px solid rgba(137,180,250,0.25);
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: clamp(28px, 6vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--accent1) 0%, var(--accent5) 50%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* ── INPUT PANEL ── */
+  .input-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent1);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+  .input-panel h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent1);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 24px;
+  }
+  .inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .input-group { display: flex; flex-direction: column; gap: 6px; }
+  .input-group label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .input-group input {
+    background: var(--eq-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--accent3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .input-group input:focus {
+    border-color: var(--accent1);
+    box-shadow: 0 0 0 3px rgba(137,180,250,0.15);
+  }
+  .input-group input.error {
+    border-color: var(--accent4);
+    box-shadow: 0 0 0 3px rgba(243,139,168,0.15);
+  }
+  .params-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .param-chip {
+    background: var(--eq-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .param-chip .pl { color: var(--muted); }
+  .param-chip .pv { color: var(--accent2); font-weight: 600; }
+  .param-chip input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--accent2);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    width: 48px;
+    text-align: center;
+    outline: none;
+    padding: 2px 4px;
+  }
+  .param-chip input:focus { border-bottom-color: var(--accent2); }
+
+  .btn-calc {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, rgba(137,180,250,0.2), rgba(203,166,247,0.2));
+    border: 1px solid rgba(137,180,250,0.4);
+    border-radius: 10px;
+    color: var(--accent1);
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-calc:hover {
+    background: linear-gradient(135deg, rgba(137,180,250,0.35), rgba(203,166,247,0.35));
+    box-shadow: 0 0 24px rgba(137,180,250,0.2);
+    transform: translateY(-1px);
+  }
+  .btn-calc:active { transform: translateY(0); }
+
+  /* ── ERROR / EMPTY STATE ── */
+  .state-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    font-size: 14px;
+    display: none;
+  }
+  .state-box.visible { display: block; }
+  .state-box.error-state { border-left: 4px solid var(--accent4); color: var(--accent4); }
+
+  /* ── STEP CARD ── */
+  .steps-container { display: none; }
+  .steps-container.visible { display: block; }
+
+  .step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .step-num {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700; font-size: 15px;
+    flex-shrink: 0;
+  }
+  .step-title { font-size: 17px; font-weight: 700; flex: 1; }
+  .step-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 5px 13px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .s1 .step-num  { background: rgba(137,180,250,0.15); color: var(--accent1); }
+  .s1 .step-title{ color: var(--accent1); }
+  .s1 .step-badge{ background: rgba(137,180,250,0.12); color: var(--accent1); }
+  .s2 .step-num  { background: rgba(166,227,161,0.15); color: var(--accent2); }
+  .s2 .step-title{ color: var(--accent2); }
+  .s2 .step-badge{ background: rgba(166,227,161,0.12); color: var(--accent2); }
+  .s3 .step-num  { background: rgba(249,226,175,0.15); color: var(--accent3); }
+  .s3 .step-title{ color: var(--accent3); }
+  .s3 .step-badge{ background: rgba(249,226,175,0.12); color: var(--accent3); }
+  .s4 .step-num  { background: rgba(243,139,168,0.15); color: var(--accent4); }
+  .s4 .step-title{ color: var(--accent4); }
+  .s4 .step-badge{ background: rgba(243,139,168,0.12); color: var(--accent4); }
+  .s5 .step-num  { background: rgba(203,166,247,0.15); color: var(--accent5); }
+  .s5 .step-title{ color: var(--accent5); }
+  .s5 .step-badge{ background: rgba(203,166,247,0.12); color: var(--accent5); }
+  .sv .step-num  { background: rgba(137,220,235,0.15); color: #89dceb; }
+  .sv .step-title{ color: #89dceb; }
+  .sv .step-badge{ background: rgba(137,220,235,0.12); color: #89dceb; }
+
+  .step-body { padding: 22px 28px; display: flex; flex-direction: column; gap: 18px; }
+
+  .explain {
+    font-size: 14px; color: var(--muted);
+    line-height: 1.7; font-family: 'JetBrains Mono', monospace;
+  }
+  .explain strong { color: var(--text); }
+
+  .eq-block {
+    background: var(--eq-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .eq-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .eq-row:last-child { border-bottom: none; }
+  .eq-lbl  { color: var(--muted); min-width: 210px; font-size: 11px; }
+  .eq-expr { color: var(--text); flex: 1; }
+  .eq-eq   { color: var(--muted); }
+  .eq-val  { font-weight: 700; font-size: 14px; }
+  .blue   { color: var(--accent1); }
+  .green  { color: var(--accent2); }
+  .yellow { color: var(--accent3); }
+  .pink   { color: var(--accent4); }
+  .purple { color: var(--accent5); }
+  .cyan   { color: #89dceb; }
+
+  .alert {
+    display: flex; gap: 12px; padding: 13px 16px;
+    border-radius: 10px; font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; line-height: 1.6; align-items: flex-start;
+  }
+  .alert.ok   { background: rgba(166,227,161,0.08); border: 1px solid rgba(166,227,161,0.2); color: var(--accent2); }
+  .alert.warn { background: rgba(249,226,175,0.08); border: 1px solid rgba(249,226,175,0.2); color: var(--accent3); }
+  .alert-icon { font-size: 16px; flex-shrink: 0; }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .result-card {
+    background: var(--eq-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+  }
+  .rc-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted);
+    margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .rc-val  { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .rc-rad  { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  .rc1 .rc-val { color: var(--accent1); }
+  .rc2 .rc-val { color: var(--accent3); }
+  .rc3 .rc-val { color: var(--accent5); }
+
+  footer {
+    margin-top: 60px; text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 1px;
+  }
+
+  @media (max-width: 600px) {
+    .inputs-grid { grid-template-columns: 1fr 1fr; }
+    .result-grid { grid-template-columns: 1fr; }
+    .step-header { flex-wrap: wrap; }
+    .eq-lbl { min-width: 130px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="tag">Robótica · Interactivo</div>
+    <h1>Cinemática Inversa<br/>Robot 3-DOF</h1>
+    <p class="subtitle">Ingresa los valores y calcula paso a paso</p>
+  </header>
+
+  <!-- INPUT PANEL -->
+  <div class="input-panel">
+    <h2>▸ Parámetros de entrada</h2>
+
+    <div class="params-row">
+      <div class="param-chip">
+        <span class="pl">a₁ =</span>
+        <input type="number" id="inp-a1" value="18" min="0.1" step="0.1"/>
+      </div>
+      <div class="param-chip">
+        <span class="pl">a₂ =</span>
+        <input type="number" id="inp-a2" value="14" min="0.1" step="0.1"/>
+      </div>
+      <div class="param-chip" style="margin-left:auto;">
+        <span class="pl">Alcance máx:</span>
+        <span class="pv" id="disp-reach">32</span>
+      </div>
+    </div>
+
+    <div class="inputs-grid">
+      <div class="input-group">
+        <label>Coordenada X</label>
+        <input type="number" id="inp-x" value="10" step="0.1" placeholder="x"/>
+      </div>
+      <div class="input-group">
+        <label>Coordenada Y</label>
+        <input type="number" id="inp-y" value="5" step="0.1" placeholder="y"/>
+      </div>
+      <div class="input-group">
+        <label>Coordenada Z</label>
+        <input type="number" id="inp-z" value="8" step="0.1" placeholder="z"/>
+      </div>
+    </div>
+
+    <button class="btn-calc" onclick="calculate()">Calcular cinemática inversa</button>
+  </div>
+
+  <!-- ERROR / EMPTY STATE -->
+  <div class="state-box" id="state-box"></div>
+
+  <!-- STEPS -->
+  <div class="steps-container" id="steps"></div>
+
+  <footer id="footer-line" style="display:none">
+    Robot 3-DOF · Cinemática Inversa · Solución codo arriba
+  </footer>
+</div>
+
+<script>
+  const $ = id => document.getElementById(id);
+
+  // Update reach display when a1/a2 change
+  ['inp-a1','inp-a2'].forEach(id => {
+    $(id).addEventListener('input', () => {
+      const a1 = parseFloat($('inp-a1').value)||0;
+      const a2 = parseFloat($('inp-a2').value)||0;
+      $('disp-reach').textContent = (a1+a2).toFixed(2);
+    });
+  });
+
+  function fmt(n, dec=4) { return Number(n).toFixed(dec); }
+  function deg(r) { return r * 180 / Math.PI; }
+  function rad(d) { return d * Math.PI / 180; }
+
+  function eq(label, expr, val, cls='') {
+    return `<div class="eq-row">
+      <span class="eq-lbl">${label}</span>
+      <span class="eq-expr">${expr}</span>
+      <span class="eq-eq">=</span>
+      <span class="eq-val ${cls}">${val}</span>
+    </div>`;
+  }
+
+  function calculate() {
+    const a1 = parseFloat($('inp-a1').value);
+    const a2 = parseFloat($('inp-a2').value);
+    const x  = parseFloat($('inp-x').value);
+    const y  = parseFloat($('inp-y').value);
+    const z  = parseFloat($('inp-z').value);
+
+    const sb  = $('state-box');
+    const sc  = $('steps');
+    const ft  = $('footer-line');
+
+    sb.className  = 'state-box';
+    sb.style.display = 'none';
+    sc.className  = 'steps-container';
+    ft.style.display = 'none';
+
+    // Validate inputs
+    if ([a1,a2,x,y,z].some(isNaN)) {
+      sb.textContent = '⚠  Todos los campos deben tener valores numéricos.';
+      sb.classList.add('visible','error-state');
+      return;
+    }
+    if (a1 <= 0 || a2 <= 0) {
+      sb.textContent = '⚠  Los eslabones a₁ y a₂ deben ser positivos.';
+      sb.classList.add('visible','error-state');
+      return;
+    }
+
+    // ── COMPUTATIONS ──────────────────────────────────────────
+    // Step 1: θ₀
+    const t0r   = Math.atan2(y, x);
+    const t0d   = deg(t0r);
+
+    // Step 2: r, dist
+    const r    = Math.sqrt(x*x + y*y);
+    const dist = Math.sqrt(r*r + z*z);
+
+    // Step 3: workspace check
+    const lo = Math.abs(a1 - a2);
+    const hi = a1 + a2;
+    const reachable = dist >= lo && dist <= hi;
+
+    if (!reachable) {
+      sb.innerHTML = `⚠  Punto <strong>(${x}, ${y}, ${z})</strong> fuera del workspace.<br/>
+        Distancia al origen = ${fmt(dist,3)} · Rango permitido = [${fmt(lo,3)}, ${fmt(hi,3)}]`;
+      sb.classList.add('visible','error-state');
+      return;
+    }
+
+    // Step 4: θ₂
+    const c2_raw = (r*r + z*z - a1*a1 - a2*a2) / (2*a1*a2);
+    const c2     = Math.max(-1, Math.min(1, c2_raw));
+    const t2r    = Math.acos(c2);
+    const t2d    = deg(t2r);
+    const s2     = Math.sin(t2r);
+    const numerator   = r*r + z*z - a1*a1 - a2*a2;
+    const denominator = 2*a1*a2;
+
+    // Step 5: θ₁
+    const k1   = a1 + a2*Math.cos(t2r);
+    const k2   = a2*Math.sin(t2r);
+    const alpha = deg(Math.atan2(z, r));
+    const beta  = deg(Math.atan2(k2, k1));
+    const t1r   = Math.atan2(z, r) - Math.atan2(k2, k1);
+    const t1d   = deg(t1r);
+
+    // Verification (FK)
+    const r1v  = a1*Math.cos(t1r);
+    const z1v  = a1*Math.sin(t1r);
+    const sum12 = t1r + t2r;
+    const r2v  = r1v + a2*Math.cos(sum12);
+    const z2v  = z1v + a2*Math.sin(sum12);
+    const xv   = r2v*Math.cos(t0r);
+    const yv   = r2v*Math.sin(t0r);
+    const zv   = z2v;
+    const errX = Math.abs(xv - x);
+    const errY = Math.abs(yv - y);
+    const errZ = Math.abs(zv - z);
+    const maxErr = Math.max(errX, errY, errZ);
+
+    // ── RENDER ────────────────────────────────────────────────
+    sc.innerHTML = `
+
+    <!-- STEP 1 -->
+    <div class="step s1">
+      <div class="step-header">
+        <div class="step-num">01</div>
+        <div class="step-title">Ángulo de base θ₀</div>
+        <div class="step-badge">θ₀ = ${fmt(t0d,4)}°</div>
+      </div>
+      <div class="step-body">
+        <div class="explain">
+          La base gira alrededor del <strong>eje Z vertical</strong>.
+          El ángulo θ₀ apunta el brazo hacia (x, y) en el plano horizontal.
+        </div>
+        <div class="eq-block">
+          ${eq('Fórmula', 'θ₀ = atan2(y, x)', '')}
+          ${eq('Sustituyendo', `atan2(${fmt(y,4)}, ${fmt(x,4)})`, '')}
+          ${eq('En radianes', '', `${fmt(t0r,6)} rad`, 'blue')}
+          ${eq('En grados', `${fmt(t0r,6)} × (180/π)`, `${fmt(t0d,4)}°`, 'blue')}
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step s2">
+      <div class="step-header">
+        <div class="step-num">02</div>
+        <div class="step-title">Reducción al plano 2D — calcular r</div>
+        <div class="step-badge">r = ${fmt(r,4)}</div>
+      </div>
+      <div class="step-body">
+        <div class="explain">
+          Fijado θ₀, el problema se reduce a un robot planar en el plano <strong>(r, z)</strong>.
+          <strong>r</strong> es la distancia horizontal al punto.
+        </div>
+        <div class="eq-block">
+          ${eq('Dist. horizontal', `r = √(x² + y²) = √(${fmt(x,4)}² + ${fmt(y,4)}²) = √${fmt(x*x+y*y,4)}`, `${fmt(r,6)}`, 'green')}
+          ${eq('Dist. total al punto', `dist = √(r² + z²) = √(${fmt(r*r,4)} + ${fmt(z*z,4)}) = √${fmt(r*r+z*z,4)}`, `${fmt(dist,6)}`, 'green')}
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step s3">
+      <div class="step-header">
+        <div class="step-num">03</div>
+        <div class="step-title">Verificación del workspace</div>
+        <div class="step-badge">✓ Alcanzable</div>
+      </div>
+      <div class="step-body">
+        <div class="explain">
+          El punto es alcanzable solo si la distancia está dentro del <strong>rango de alcance</strong> del brazo.
+        </div>
+        <div class="eq-block">
+          ${eq('Condición', '|a₁ − a₂|  ≤  dist  ≤  a₁ + a₂', '')}
+          ${eq('Límite inferior', `|${a1} − ${a2}|`, `${fmt(lo,4)}`, 'yellow')}
+          ${eq('Límite superior', `${a1} + ${a2}`, `${fmt(hi,4)}`, 'yellow')}
+          ${eq('Comprobación', `${fmt(lo,4)}  ≤  ${fmt(dist,4)}  ≤  ${fmt(hi,4)}`, '✓ VÁLIDO', 'green')}
+        </div>
+        <div class="alert ok">
+          <span class="alert-icon">✓</span>
+          <span>El punto <strong>(${x}, ${y}, ${z})</strong> está dentro del workspace.
+          Distancia = ${fmt(dist,4)} · Rango = [${fmt(lo,4)}, ${fmt(hi,4)}]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step s4">
+      <div class="step-header">
+        <div class="step-num">04</div>
+        <div class="step-title">Ángulo de codo θ₂ — Ley del coseno</div>
+        <div class="step-badge">θ₂ = ${fmt(t2d,4)}°</div>
+      </div>
+      <div class="step-body">
+        <div class="explain">
+          En el plano (r, z) se forma un <strong>triángulo</strong> con lados a₁, a₂ y dist.
+          Aplicamos la <strong>Ley del coseno</strong> para hallar θ₂ en el codo.
+        </div>
+        <div class="eq-block">
+          ${eq('Ley del coseno', 'cos(θ₂) = (r² + z² − a₁² − a₂²) / (2·a₁·a₂)', '')}
+          ${eq('Numerador', `r²+z² − a₁² − a₂² = ${fmt(r*r+z*z,4)} − ${fmt(a1*a1+a2*a2,4)}`, `${fmt(numerator,4)}`, 'pink')}
+          ${eq('Denominador', `2 · ${a1} · ${a2}`, `${fmt(denominator,4)}`, 'pink')}
+          ${eq('cos(θ₂)', `${fmt(numerator,4)} / ${fmt(denominator,4)}`, `${fmt(c2,6)}`, 'pink')}
+          ${eq('θ₂ = acos(' + fmt(c2,4) + ')', '', `${fmt(t2d,4)}°  (${fmt(t2r,6)} rad)`, 'pink')}
+          ${eq('sin(θ₂)', `sin(${fmt(t2d,4)}°)`, `${fmt(s2,6)}`, 'pink')}
+        </div>
+        <div class="alert warn">
+          <span class="alert-icon">⚠</span>
+          <span>Solución <strong>codo arriba</strong> → θ₂ = +acos(…).
+          La solución codo abajo sería θ₂ = ${fmt(-t2d,4)}°.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step s5">
+      <div class="step-header">
+        <div class="step-num">05</div>
+        <div class="step-title">Ángulo de hombro θ₁ — Descomposición</div>
+        <div class="step-badge">θ₁ = ${fmt(t1d,4)}°</div>
+      </div>
+      <div class="step-body">
+        <div class="explain">
+          θ₁ = <strong>α − β</strong>, donde α es el ángulo directo al punto
+          y β es la corrección introducida por el codo doblado.
+        </div>
+        <div class="eq-block">
+          ${eq('k₁ = a₁ + a₂·cos(θ₂)', `${a1} + ${a2}·cos(${fmt(t2d,4)}°) = ${a1} + ${a2}·(${fmt(Math.cos(t2r),6)})`, `${fmt(k1,6)}`, 'purple')}
+          ${eq('k₂ = a₂·sin(θ₂)', `${a2}·sin(${fmt(t2d,4)}°) = ${a2}·${fmt(s2,6)}`, `${fmt(k2,6)}`, 'purple')}
+          ${eq('α = atan2(z, r)', `atan2(${fmt(z,4)}, ${fmt(r,4)})`, `${fmt(alpha,4)}°`, 'purple')}
+          ${eq('β = atan2(k₂, k₁)', `atan2(${fmt(k2,4)}, ${fmt(k1,4)})`, `${fmt(beta,4)}°`, 'purple')}
+          ${eq('θ₁ = α − β', `${fmt(alpha,4)}° − ${fmt(beta,4)}°`, `${fmt(t1d,4)}°  (${fmt(t1r,6)} rad)`, 'purple')}
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6: VERIFICATION -->
+    <div class="step sv">
+      <div class="step-header">
+        <div class="step-num">✓</div>
+        <div class="step-title">Verificación — Cinemática Directa</div>
+        <div class="step-badge">Error = ${fmt(maxErr,5)}</div>
+      </div>
+      <div class="step-body">
+        <div class="explain">
+          Aplicamos <strong>cinemática directa</strong> con los ángulos calculados
+          para comprobar que el efector llega al punto objetivo.
+        </div>
+        <div class="eq-block">
+          ${eq('θ₀, θ₁, θ₂', '', `${fmt(t0d,4)}°,  ${fmt(t1d,4)}°,  ${fmt(t2d,4)}°`, 'cyan')}
+          ${eq('r₁ = a₁·cos(θ₁)', `${a1}·cos(${fmt(t1d,4)}°)`, `${fmt(r1v,6)}`, 'cyan')}
+          ${eq('z₁ = a₁·sin(θ₁)', `${a1}·sin(${fmt(t1d,4)}°)`, `${fmt(z1v,6)}`, 'cyan')}
+          ${eq('θ₁+θ₂', `${fmt(t1d,4)}° + ${fmt(t2d,4)}°`, `${fmt(deg(sum12),4)}°`, 'cyan')}
+          ${eq('r₂ = r₁ + a₂·cos(θ₁+θ₂)', `${fmt(r1v,4)} + ${a2}·cos(${fmt(deg(sum12),4)}°)`, `${fmt(r2v,6)}`, 'cyan')}
+          ${eq('z₂ = z₁ + a₂·sin(θ₁+θ₂)', `${fmt(z1v,4)} + ${a2}·sin(${fmt(deg(sum12),4)}°)`, `${fmt(z2v,6)}  ≈ ${z} ${errZ<0.01?'✓':'⚠'}`, 'cyan')}
+          ${eq('x = r₂·cos(θ₀)', `${fmt(r2v,4)}·cos(${fmt(t0d,4)}°)`, `${fmt(xv,6)}  ≈ ${x} ${errX<0.01?'✓':'⚠'}`, 'cyan')}
+          ${eq('y = r₂·sin(θ₀)', `${fmt(r2v,4)}·sin(${fmt(t0d,4)}°)`, `${fmt(yv,6)}  ≈ ${y} ${errY<0.01?'✓':'⚠'}`, 'cyan')}
+        </div>
+        <div class="alert ok">
+          <span class="alert-icon">✓</span>
+          <span>Error máximo = <strong>${fmt(maxErr,6)}</strong>. Los ángulos calculados llevan el efector al punto objetivo.</span>
+        </div>
+
+        <div style="margin-top:8px;">
+          <p style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted);
+             text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">Resultado final</p>
+          <div class="result-grid">
+            <div class="result-card rc1">
+              <div class="rc-label">θ₀  Base</div>
+              <div class="rc-val">${fmt(t0d,2)}°</div>
+              <div class="rc-rad">${fmt(t0r,4)} rad</div>
+            </div>
+            <div class="result-card rc2">
+              <div class="rc-label">θ₁  Hombro</div>
+              <div class="rc-val">${fmt(t1d,2)}°</div>
+              <div class="rc-rad">${fmt(t1r,4)} rad</div>
+            </div>
+            <div class="result-card rc3">
+              <div class="rc-label">θ₂  Codo</div>
+              <div class="rc-val">${fmt(t2d,2)}°</div>
+              <div class="rc-rad">${fmt(t2r,4)} rad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+    sc.classList.add('visible');
+    ft.style.display = 'block';
+    sc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Auto-calculate on load
+  window.addEventListener('load', calculate);
+</script>
+</body>
+</html>
