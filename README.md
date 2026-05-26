@@ -34,7 +34,7 @@ El sistema está compuesto por un brazo robótico de 3 grados de libertad:
 - Articulación 3: Movimiento del segundo eslabón
 - Efector final: Posicionamiento en el plano
 
-![Ensamblaje en SolidWorks](Resources/Ensamblaje%201.png)
+![Ensamblaje en SolidWorks](Resources/Captura%de%pantalla%2026-05-25%200031.png)
 
 El modelo permite calcular:
 - Cinemática directa
