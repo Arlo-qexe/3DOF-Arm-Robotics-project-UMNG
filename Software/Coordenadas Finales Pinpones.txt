@@ -1,0 +1,17 @@
+Coordenadas Finales Pinpones:
+	z = -50m (+20mm con altura pingpong + 80mm movimiento previo)
+	y = +162.99mm
+	x1= -34.87mm
+	x2= +25.13mm
+	x3= +85.13mm
+Coordenadas Recogida Pinpones:
+
+	z = -50mm (+20mm con altura pingpong)
+	x = 172mm
+	y = 75mm
+
+Coordenadas Descanso:
+
+	z = 197.01mm
+	x = 125.23mm
+	y = 19.87mm
