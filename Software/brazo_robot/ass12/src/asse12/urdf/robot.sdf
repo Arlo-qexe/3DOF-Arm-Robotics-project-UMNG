@@ -1,0 +1,378 @@
+<sdf version="1.11">
+  <model name="Ensamblajev12_6">
+    <link name="base_link">
+      <inertial>
+        <pose>0.14768999999999999 -0.092824000000000004 0.098949999999999996 0 0 0</pose>
+        <mass>5</mass>
+        <inertia>
+          <ixx>0.0061942999999999998</ixx>
+          <ixy>0.00034463000000000001</ixy>
+          <ixz>-2.711e-05</ixz>
+          <iyy>0.013162</iyy>
+          <iyz>9.2507999999999996e-06</iyz>
+          <izz>0.010154</izz>
+        </inertia>
+      </inertial>
+      <collision name="base_link_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.372550011 0.372550011 0.372550011 1</diffuse>
+          <ambient>0.372550011 0.372550011 0.372550011 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="J1" type="revolute">
+      <pose relative_to="base_link">0.099806000000000006 -0.13500000000000001 0.10018000000000001 1.5708 -0.0014338000000000003 1.0842032869283527e-19</pose>
+      <parent>base_link</parent>
+      <child>B1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="B1">
+      <pose relative_to="J1">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0050892999999999997 0.0028828999999999999 0.020525999999999999 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.0011773</ixx>
+          <ixy>-3.3249e-05</ixy>
+          <ixz>-0.00011396</ixz>
+          <iyy>0.0012987000000000001</iyy>
+          <iyz>-2.1577999999999999e-05</iyz>
+          <izz>0.0019640999999999999</izz>
+        </inertia>
+      </inertial>
+      <collision name="B1_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/B1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="B1_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/B1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="J2" type="revolute">
+      <pose relative_to="B1">0.040000000000000001 -0.032000000000000001 0.065000000000000002 -1.5708 1.0842021724855044e-19 -0.0014338</pose>
+      <parent>B1</parent>
+      <child>A1</child>
+      <axis>
+        <xyz>-0.0014338 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>1</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="A1">
+      <pose relative_to="J2">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.084043000000000007 0.00053773999999999998 0.011617000000000001 0 0 0</pose>
+        <mass>0.14999999999999999</mass>
+        <inertia>
+          <ixx>0.00014704</ixx>
+          <ixy>-6.8148999999999998e-06</ixy>
+          <ixz>-3.9770999999999996e-06</ixz>
+          <iyy>0.0013021</iyy>
+          <iyz>-1.4880000000000001e-07</iyz>
+          <izz>0.0013966</izz>
+        </inertia>
+      </inertial>
+      <collision name="A1_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/A1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="A1_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/A1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="J3" type="revolute">
+      <pose relative_to="A1">0.17996999999999999 0.0027028 0.0072582000000000002 0.0014338000000000003 -1.0509999999999993e-05 -1.5634999999999997</pose>
+      <parent>A1</parent>
+      <child>A2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>1</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="A2">
+      <pose relative_to="J3">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0040691 0.054379999999999998 0.044947000000000001 0 0 0</pose>
+        <mass>0.10000000000000001</mass>
+        <inertia>
+          <ixx>0.00089174999999999996</ixx>
+          <ixy>-3.5920999999999997e-05</ixy>
+          <ixz>-1.9369e-06</ixz>
+          <iyy>0.00015707000000000001</iyy>
+          <iyz>-3.9437000000000002e-05</iyz>
+          <izz>0.00093243999999999998</izz>
+        </inertia>
+      </inertial>
+      <collision name="A2_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/A2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="A2_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/A2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="J4" type="fixed">
+      <pose relative_to="A2">-0.00025000000000000001 0.16894000000000001 0.047 3.1415853071795872 0.89637000000000033 3.1415853071795872</pose>
+      <parent>A2</parent>
+      <child>G1</child>
+      <axis>
+        <xyz>0 1 1</xyz>
+        <limit>
+          <effort>0</effort>
+          <velocity>0</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="G1">
+      <pose relative_to="J4">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.0062160000000000002 0.0025049 0.0077751000000000001 0 0 0</pose>
+        <mass>0.0050000000000000001</mass>
+        <inertia>
+          <ixx>1.0619e-09</ixx>
+          <ixy>-5.2811000000000005e-10</ixy>
+          <ixz>-1.0382e-11</ixz>
+          <iyy>1.8409e-08</iyy>
+          <iyz>2.1735999999999999e-11</iyz>
+          <izz>1.7847000000000001e-08</izz>
+        </inertia>
+      </inertial>
+      <collision name="G1_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/G1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="G1_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/G1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="g1" type="prismatic">
+      <pose relative_to="G1">-0.025731 0.0086003999999999994 -0.0071254999999999999 0.0091681000000000002 0.89634000000000047 0.011738</pose>
+      <parent>G1</parent>
+      <child>g11</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <mimic joint="J4">
+          <multiplier>1</multiplier>
+          <offset>0</offset>
+          <reference>0</reference>
+        </mimic>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.02</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="g11">
+      <pose relative_to="g1">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00056572999999999997 0.013665999999999999 -0.010485 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1.3061000000000001e-06</ixx>
+          <ixy>4.6515999999999998e-08</ixy>
+          <ixz>-5.9279999999999996e-10</ixz>
+          <iyy>1.8437e-07</iyy>
+          <iyz>1.4324e-08</iyz>
+          <izz>1.3200000000000001e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="g11_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/g11.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="g11_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/g11.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name="g2" type="prismatic">
+      <pose relative_to="G1">0.012167000000000001 0.0085930999999999993 0.023365 0.0091681000000000002 0.89634000000000047 0.011738</pose>
+      <parent>G1</parent>
+      <child>g12</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <mimic joint="g1">
+          <multiplier>1</multiplier>
+          <offset>0</offset>
+          <reference>0</reference>
+        </mimic>
+        <limit>
+          <lower>-0.01</lower>
+          <upper>0.025000000000000001</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="g12">
+      <pose relative_to="g2">0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00056572000000000002 0.013665999999999999 0.010485 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1.3061000000000001e-06</ixx>
+          <ixy>4.6515000000000003e-08</ixy>
+          <ixz>5.9310000000000005e-10</ixz>
+          <iyy>1.8437e-07</iyy>
+          <iyz>-1.4324e-08</iyz>
+          <izz>1.3200000000000001e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="g12_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/g12.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="g12_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://asse12/meshes/visual/g12.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
