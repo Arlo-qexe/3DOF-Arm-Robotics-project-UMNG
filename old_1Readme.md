@@ -145,11 +145,7 @@ El robot ejecuta una secuencia autónoma de pick & place: recoge pelotas del dis
 - **Trayectoria:** planificada con el simulador y cargada via CSV al firmware
 - **Ejecución:** ~31.5 s por ciclo completo (3 pelotas)
 
-**Video — prueba final:**
-
-<video src="Resources/VIDEOS/Video%20prueba%20final.mp4" controls width="720"></video>
-
-Más videos de prueba en [`Resources/VIDEOS/`](Resources/VIDEOS/)
+**Videos de prueba:** [`Resources/VIDEOS/`](Resources/VIDEOS/)
 
 ---
 
