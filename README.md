@@ -147,7 +147,11 @@ El robot ejecuta una secuencia autónoma de pick & place: recoge pelotas del dis
 
 **Video — prueba final:**
 
+<<<<<<< HEAD
 <video src="https://raw.githubusercontent.com/Arlo-qexe/3DOF-Arm-Robotics-project-UMNG/main/Resources/VIDEOS/video_final.mp4" controls width="720"></video>
+=======
+<video src="https://github.com/Arlo-qexe/3DOF-Arm-Robotics-project-UMNG/blob/main/Resources/VIDEOS/video_final.mp4" controls width="720"></video>
+>>>>>>> origin/main
 
 Más videos de prueba en [`Resources/VIDEOS/`](Resources/VIDEOS/)
 
